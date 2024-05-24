@@ -27,6 +27,16 @@
   width: 100px;
 }
 
+
+
+  .bienvenida {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente a Arial */
+    font-size: 24px; /* Ajusta el tamaño del texto */
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #ff0000; /* Cambia el color del texto a rojo */
+  }
+
+
 .menu ul {
   list-style-type: none;
   margin: 0;
@@ -53,18 +63,17 @@
 
 /* Sidebar.css */
 
-
 .sidebar {
   width: 250px;
   height: 100%;
   background-color: #ADD8E6; /* Cambia el color de fondo */
-  padding-top: 40px;
+  padding-top: 20px;
   padding-left: 20px;
   border-right: 2px solid #007bff; /* Agrega un borde a la derecha */
 }
 
 .menu-help {
-  padding-top: 100%;
+  padding-top:125%;
 }
 
 .sidebar ul {
@@ -91,3 +100,4 @@
   color: #007bff; /* Cambia el color al pasar el mouse */
   background-color: rgba(0, 123, 255, 0.1); /* Cambia el color de fondo al pasar el mouse */
 }
+
