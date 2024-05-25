@@ -1,6 +1,6 @@
 import React from 'react';
-import './Login.css';
-import logoSrc from './logo.jpg'; // Importa el logo correctamente
+import '../assets/Login.css';
+import logoSrc from '../assets/logo.jpg'; // Importa el logo correctamente
 
 function Login() {
   return (

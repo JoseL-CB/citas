@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './componets/Dashboard';
-import Admin from './componets/Admin';
-import AgregarUsuario from './componets/AgregarUsuario';
-import Login from './componets/Login';
+import Dashboard from './vistas/Dashboard';
+import Admin from './vistas/Admin';
+import AgregarUsuario from './vistas/AgregarUsuario';
+import Login from './vistas/Login';
 
 function App() {
   return (

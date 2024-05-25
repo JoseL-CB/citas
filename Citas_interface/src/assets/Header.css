@@ -1,0 +1,50 @@
+/* src/components/Header.css */
+.header {
+  background-color: #007bff;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos horizontalmente */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.logo-container {
+  width: 5%;
+  height: 8%;
+}
+
+.logo {
+  width: 100px;
+}
+
+  .bienvenida {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .menu{
+    margin-right: 20px;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .menu ul li {
+    display: inline;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  

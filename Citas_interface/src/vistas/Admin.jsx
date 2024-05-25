@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './admin.css';
+import '../assets/admin.css';
 import { UserAddOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
 
 function Admin() {

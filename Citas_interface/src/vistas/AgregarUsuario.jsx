@@ -1,7 +1,7 @@
 // AgregarUsuario.jsx
 
 import React from 'react';
-import './AgregarUsuario.css'; // Importa el archivo de estilos específico para AgregarUsuario
+import '../assets/AgregarUsuario.css'; // Importa el archivo de estilos específico para AgregarUsuario
 
 function AgregarUsuario() {
   return (
