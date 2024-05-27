@@ -94,3 +94,31 @@
 .action-btn.delete {
   margin-top: 2px; /* Separa aún más los botones de eliminar */
 }
+
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: right;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}

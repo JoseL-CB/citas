@@ -1,8 +1,7 @@
-// AgregarUsuario.js
 import React from 'react';
 import '../assets/AgregarUsuario.css';
 import useUserData from '../modelos/AgregarUsuarioModel';
-import createUser from '../controladores/AgregarUsuarioController';
+import { createUser } from '../controladores/AgregarUsuarioController';
 
 function AgregarUsuario() {
   const { userData, handleChange } = useUserData();
