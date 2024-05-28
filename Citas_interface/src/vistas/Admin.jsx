@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/admin.css';
-import { UserAddOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons';
-import { deleteUser, updateUser, getUsers } from '../controladores/AgregarUsuarioController';
+import { UserAddOutlined, DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons';
+import { deleteUser, updateUser, getUsers, getUserById } from '../controladores/AgregarUsuarioController';
 
 function Admin() {
   const [usuarios, setUsuarios] = useState([]);
+  const [filtroId, setFiltroId] = useState('');
+  const [usuarioFiltrado, setUsuarioFiltrado] = useState(null);
 
   useEffect(() => {
-    // Función para obtener la lista de usuarios desde el controlador
     const obtenerUsuarios = async () => {
       try {
         const data = await getUsers();
@@ -18,14 +19,12 @@ function Admin() {
       }
     };
 
-    // Llamada a la función para obtener los usuarios al cargar la página
     obtenerUsuarios();
   }, []);
 
   const handleDelete = async (id) => {
     try {
       await deleteUser(id);
-      // Eliminar el usuario de la lista localmente
       setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
     } catch (error) {
       console.error('Error al eliminar usuario:', error);
@@ -35,7 +34,6 @@ function Admin() {
   const handleUpdate = async (id, userData) => {
     try {
       await updateUser(id, userData);
-      // Actualizar los datos del usuario en la lista localmente
       setUsuarios(
         usuarios.map((usuario) => {
           if (usuario.id === id) {
@@ -49,14 +47,33 @@ function Admin() {
     }
   };
 
+  const handleBuscar = async () => {
+    if (filtroId.trim() === '') {
+      setUsuarioFiltrado(null);
+      return;
+    }
+
+    try {
+      const data = await getUserById(parseInt(filtroId));
+      setUsuarioFiltrado(data);
+    } catch (error) {
+      console.error('Error al buscar usuario:', error);
+      setUsuarioFiltrado(null);
+    }
+  };
+
   return (
-    <div className='fondo'>
+    <div className="background-container">
       <div className="container">
         <h2 className="admin-heading">Listar Usuarios</h2>
         <div className="search-container">
-          {/* Aquí se puede agregar el campo de búsqueda */}
-          <input type="text" placeholder="Buscar usuario" />
-          <button>Buscar</button>
+          <input
+            type="text"
+            value={filtroId}
+            onChange={(e) => setFiltroId(e.target.value)}
+            placeholder="Buscar por ID"
+          />
+          <button onClick={handleBuscar}><SearchOutlined /></button>
         </div>
         <div className="table-container">
           <table className="table">
@@ -71,19 +88,33 @@ function Admin() {
               </tr>
             </thead>
             <tbody>
-              {usuarios.map((usuario) => (
-                <tr key={usuario.id}>
-                  <td>{usuario.id}</td>
-                  <td>{usuario.nombres}</td>
-                  <td>{usuario.fecha_nacimiento}</td>
-                  <td>{usuario.roleid}</td>
-                  <td><span className={`status ${usuario.estado === 'activo' ? 'active' : 'inactive'}`}>&bull;</span> {usuario.estado}</td>
+              {usuarioFiltrado ? (
+                <tr key={usuarioFiltrado.id}>
+                  <td>{usuarioFiltrado.id}</td>
+                  <td>{usuarioFiltrado.nombres}</td>
+                  <td>{usuarioFiltrado.fecha_nacimiento}</td>
+                  <td>{usuarioFiltrado.roleid}</td>
+                  <td><span className={`status ${usuarioFiltrado.estado === 'activo' ? 'active' : 'inactive'}`}>&bull;</span> {usuarioFiltrado.estado}</td>
                   <td>
-                    <Link to={`/modificar/${usuario.id}`} className="action-btn edit" title="Editar"><EditOutlined /></Link>
-                    <button className="action-btn delete" title="Eliminar" onClick={() => handleDelete(usuario.id)}><DeleteOutlined /></button>
+                    <Link to={`/modificar-usuario/${usuarioFiltrado.id}`} className="action-btn edit" title="Editar"><EditOutlined /></Link>
+                    <button className="action-btn delete" title="Eliminar" onClick={() => handleDelete(usuarioFiltrado.id)}><DeleteOutlined /></button>
                   </td>
                 </tr>
-              ))}
+              ) : (
+                usuarios.map((usuario) => (
+                  <tr key={usuario.id}>
+                    <td>{usuario.id}</td>
+                    <td>{usuario.nombres}</td>
+                    <td>{usuario.fecha_nacimiento}</td>
+                    <td>{usuario.roleid}</td>
+                    <td><span className={`status ${usuario.estado === 'activo' ? 'active' : 'inactive'}`}>&bull;</span> {usuario.estado}</td>
+                    <td>
+                      <Link to={`/modificar-usuario/${usuario.id}`} className="action-btn edit" title="Editar"><EditOutlined /></Link>
+                      <button className="action-btn delete" title="Eliminar" onClick={() => handleDelete(usuario.id)}><DeleteOutlined /></button>
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>

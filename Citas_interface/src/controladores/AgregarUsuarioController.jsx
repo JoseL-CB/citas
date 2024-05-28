@@ -36,7 +36,7 @@ const getUserById = async (id) => {
 
 const getUsers = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/');
+    const response = await axios.get('http://localhost:8000/api/listar');
     return response.data;
   } catch (error) {
     throw new Error('Error al obtener la lista de usuarios');
