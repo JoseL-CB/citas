@@ -1,10 +1,6 @@
-// LoginModel.js
-
-
 const LoginModel = {
-    cedula: '',
-    contrasena: '',
-  };
-  
-  export default LoginModel;
-  
+  cedula: '',
+  password: '', // Cambiado de 'contrasena' a 'password' para coincidir con el nombre en el backend
+};
+
+export default LoginModel;

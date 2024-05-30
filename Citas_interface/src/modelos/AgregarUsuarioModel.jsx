@@ -1,4 +1,3 @@
-// AgregarUsuarioModel.js
 import { useState } from 'react';
 
 const useUserData = () => {
@@ -10,7 +9,7 @@ const useUserData = () => {
     email: '',
     password: '',
     sexo: '',
-    roleid: 1, // Inicializado a 1 por defecto (Admin)
+    roleid: 1, 
   });
 
   const handleChange = (event) => {
