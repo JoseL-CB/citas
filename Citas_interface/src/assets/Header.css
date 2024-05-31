@@ -1,50 +1,55 @@
 /* src/components/Header.css */
 .header {
   background-color: #007bff;
-  padding: 3px 4px;
+  padding: 10px 20px;
   display: flex;
-  justify-content: space-between; /* Alinea los elementos horizontalmente */
-  align-items: center; /* Alinea los elementos verticalmente */
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  width: 100%; /* Asegura que ocupe el 100% del ancho */
+  position: fixed; /* Fija la posición en la parte superior */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .logo-container {
   width: 5%;
-  height: 8%;
+  height: 6%;
 }
 
 .logo {
-  width: 80px;
+  width: 100%;
 }
 
-  .bienvenida {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
+.bienvenida {
+  font-size: 1.2em;
+  font-weight: bold;
+}
 
-  .menu{
-    margin-right: 20px;
-  }
-  
-  .menu ul {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-  }
-  
-  .menu ul li {
-    display: inline;
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    padding: 10px;
-    border-radius: 4px;
-  }
-  
-  .menu ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
+.menu {
+  margin-right: 20px;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.menu ul li {
+  display: inline;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.menu ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

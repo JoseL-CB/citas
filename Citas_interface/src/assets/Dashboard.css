@@ -1,0 +1,71 @@
+/* src/assets/Dashboard.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.dashboard-content {
+  margin-left: 220px;
+  margin-top: 60px;
+  padding: 20px;
+  width: calc(100% - 220px);
+}
+
+h1 {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.info-section {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(50% - 20px); /* Ajusta esto según el número de tarjetas que desees en una fila */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.info-card p {
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+.info-card ul {
+  list-style-type: none;
+  padding: 0;
+  color: #555;
+}
+
+.info-card ul li {
+  margin-bottom: 10px;
+}

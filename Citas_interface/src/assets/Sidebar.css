@@ -1,42 +1,58 @@
 /* src/components/Sidebar.css */
 .sidebar {
-    width: 200px;
-    background-color: #ADD8E6;
-    padding: 20px;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: 10px 0;
-  }
-  
-  .menu-help {
-    margin-top: 150%;
-  }
-  
-  .menu-help ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .menu-help ul li {
-    margin: 10px 0;
-  }
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
-    padding: 10px; /* Aumenta el espacio interno */
-    border-radius: 4px; /* Agrega bordes redondeados */
-  }
-  
-  .sidebar ul li a:hover {
-    color: #007bff; /* Cambia el color al pasar el mouse */
-    background-color: rgba(0, 123, 255, 0.1); /* Cambia el color de fondo al pasar el mouse */
-  }
+  width: 200px;
+  background-color: #ADD8E6;
+  padding: 20px;
+  height: calc(100vh - 60px); /* Altura total menos la altura del header */
+  position: fixed;
+  top: 60px; /* Alinea con la parte inferior del header */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.menu-help {
+  margin-top: 20px;
+}
+
+.menu-help ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-help ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
+  padding: 10px; /* Aumenta el espacio interno */
+  border-radius: 4px; /* Agrega bordes redondeados */
+}
+
+.sidebar ul li a:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse */
+  background-color: rgba(0, 123, 255, 0.1); /* Cambia el color de fondo al pasar el mouse */
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+}

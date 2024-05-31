@@ -15,7 +15,7 @@ function Login() {
             if (response.success) {
                 switch (response.role) {
                     case 1:
-                        navigate('/admin');
+                        navigate('/Admindash');
                         break;
                     case 2:
                         navigate('/guardia');

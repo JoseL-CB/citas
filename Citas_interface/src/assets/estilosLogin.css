@@ -1,0 +1,104 @@
+  
+  /* AdminHeader.css */
+  .admin-header {
+    background-color: #007bff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .admin-logo-container {
+    width: 5%;
+    height: 6%;
+  }
+  
+  .admin-logo {
+    width: 100%;
+  }
+  
+  .admin-bienvenida {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .admin-menu {
+    margin-right: 20px;
+  }
+  
+  .admin-menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .admin-menu ul li {
+    display: inline;
+  }
+  
+  .admin-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .admin-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* AdminSidebar.css */
+  .admin-sidebar {
+    width: 200px;
+    background-color: #ADD8E6;
+    padding: 20px;
+  }
+  
+  .admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-sidebar ul li {
+    margin: 10px 0;
+  }
+  
+  .admin-menu-help {
+    margin-top: 20px;
+  }
+  
+  .admin-menu-help ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-menu-help ul li {
+    margin: 10px 0;
+  }
+  
+  .admin-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .admin-sidebar ul li a:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+  }
+  
+  .admin-footer {
+    margin-top: auto;
+    padding-top: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+  }
+  
