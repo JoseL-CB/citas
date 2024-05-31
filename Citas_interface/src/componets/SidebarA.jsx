@@ -7,7 +7,7 @@ import '../assets/estilosLogin.css'; // Importa el archivo de estilos específic
 const AdminSidebar = () => (
   <div className="admin-sidebar">
     <ul>
-      <li><Link to="/users"><UserOutlined /> Usuarios</Link></li>
+      <li><Link to="/admin"><UserOutlined /> Usuarios</Link></li>
       <li><Link to="/patients"><FileTextOutlined /> Pacientes</Link></li>
       <li><Link to="/rooms"><FileTextOutlined /> Habitaciones</Link></li>
       <li><Link to="/events"><CalendarOutlined /> Eventos</Link></li>

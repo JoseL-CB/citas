@@ -1,5 +1,3 @@
-// ModificarUsuario.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import '../assets/ModificarUsuario.css';
@@ -8,6 +6,7 @@ import { updateUser, getUserById } from '../controladores/AgregarUsuarioControll
 function ModificarUsuario() {
   const { id } = useParams();
   const [userData, setUserData] = useState({});
+  const [showAlert, setShowAlert] = useState(false); // Estado para controlar la visibilidad de la alerta
 
   useEffect(() => {
     const obtenerUsuario = async () => {
@@ -34,6 +33,7 @@ function ModificarUsuario() {
     e.preventDefault();
     try {
       await updateUser(id, userData);
+      setShowAlert(true); // Mostrar la alerta cuando se actualiza correctamente el usuario
       console.log('Usuario actualizado correctamente');
     } catch (error) {
       console.error('Error al actualizar usuario:', error);
@@ -89,6 +89,11 @@ function ModificarUsuario() {
           <button type="submit" className="btn btn-primary">Guardar Cambios</button>
         </form>
       </div>
+      {showAlert && (
+        <div className="alert alert-success" role="alert">
+          <span className="alert-icon">✓</span> Usuario modificado correctamente
+        </div>
+      )}
     </div>
   );
 }

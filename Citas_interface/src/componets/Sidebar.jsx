@@ -10,7 +10,6 @@ const Sidebar = () => (
       <li><Link to="/ultimasNoticias"><FileTextOutlined /> Últimas Noticias</Link></li>
       <li><Link to="/eventos"><CalendarOutlined /> Eventos</Link></li>
       <li><Link to="/informes"><FileTextOutlined /> Informes</Link></li>
-      <li><Link to="/admin"><FileTextOutlined /> admin</Link></li>
     </ul>
     <div className="menu-help">
       <ul>
