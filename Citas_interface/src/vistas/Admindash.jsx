@@ -1,4 +1,3 @@
-// AdminDashboard.jsx
 import React from 'react';
 import HeaderA from '../componets/HeaderA';
 import SidebarA from '../componets/SidebarA';

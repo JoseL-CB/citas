@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../assets/Login.css';
 import logoSrc from '../assets/logo.jpg';
-import { useNavigate } from 'react-router-dom';
 import { login } from '../controladores/LoginController'; // Importa la función de login
 import LoginModel from '../modelos/LoginModel'; // Importa el modelo de login
 
@@ -11,21 +11,10 @@ function Login() {
 
     const handleLogin = async () => {
         try {
+            console.log("Credenciales antes de enviar:", credentials);  // Añadir log para depuración
             const response = await login(credentials); // Utiliza la función de login del controlador
             if (response.success) {
-                switch (response.role) {
-                    case 1:
-                        navigate('/Admindash');
-                        break;
-                    case 2:
-                        navigate('/guardia');
-                        break;
-                    case 3:
-                        navigate('/recepcion');
-                        break;
-                    default:
-                        console.error('Rol no reconocido');
-                }
+                navigate('/Admindash');
             } else {
                 console.error('Credenciales incorrectas');
             }

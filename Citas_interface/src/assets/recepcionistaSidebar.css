@@ -1,0 +1,28 @@
+/* recepcionistaSidebar.css */
+
+.sidebar {
+    background-color: #f0f0f0;
+    width: 200px;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #1890ff;
+  }
+  
