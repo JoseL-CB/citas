@@ -14,7 +14,13 @@ function Login() {
             console.log("Credenciales antes de enviar:", credentials);  // Añadir log para depuración
             const response = await login(credentials); // Utiliza la función de login del controlador
             if (response.success) {
-                navigate('/Admindash');
+                if (response.role === 1) {
+                    navigate('/Admindash');
+                } else if (response.role === 2) {
+                    navigate('/Recepcionista');
+                } else if (response.role === 3) {
+                    navigate('/Guarda');
+                }
             } else {
                 console.error('Credenciales incorrectas');
             }

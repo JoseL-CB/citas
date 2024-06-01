@@ -1,10 +1,11 @@
+// HeaderR.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo2.png';
 import { LogoutOutlined } from '@ant-design/icons';
 import { logout } from '../controladores/LogoutController'; // Importa la función de logout
 
-const Header = () => {
+const HeaderR = () => {
     const user = JSON.parse(localStorage.getItem('user'));
     const navigate = useNavigate();
 
@@ -26,7 +27,7 @@ const Header = () => {
             </div>
             <div className="welcome-container">
                 <b className="welcome-text">Bienvenido</b>
-                <span className="username">{user ? user.nombre : 'Administrador'}</span>
+                <span className="username">{user ? user.nombre : 'Recepcionista'}</span>
             </div>
             <div className="menu">
                 <ul>
@@ -37,4 +38,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default HeaderR;

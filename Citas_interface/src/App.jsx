@@ -4,7 +4,8 @@ import Dashboard from './vistas/Dashboard';
 import Admin from './vistas/Admin';
 import Login from './vistas/Login';
 import Admindash from './vistas/Admindash';
-import RecepcionistaDashboard from './vistas/RecepcionistaDasboard';
+import RecepcionistaDashboard from './vistas/RecepcionistaDashboard';
+import GuardaDahboard from './vistas/GuardaDashboard'
 import News from './vistas/News';
 import Events from './vistas/Events';
 import Reporst from './vistas/Reporst';
@@ -21,7 +22,8 @@ function App() {
         <Route path="/informes" element={<Reporst />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/Admindash" element={<Admindash />} /> 
-        <Route path="/Recepcionista" element={<RecepcionistaDashboard />} />       
+        <Route path="/Recepcionista" element={<RecepcionistaDashboard />} /> 
+        <Route path="/Guarda" element={<GuardaDahboard />} />       
         <Route path="/login" element={<Login />} />
         <Route path="/agregar-usuario" element={<AgregarUsuario />} />
         <Route path="/modificar-usuario/:id" element={<ModificarUsuario />} /> 

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderA from '../componets/HeaderA';
 import SidebarA from '../componets/SidebarA';
-import '../assets/estilosLogin.css';
+import '../assets/estilosAdmim.css';
 
 const AdminDashboard = () => (
   <div className="dashboard-container">
