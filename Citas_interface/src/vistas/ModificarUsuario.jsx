@@ -81,9 +81,9 @@ function ModificarUsuario() {
           <div className="form-group">
             <label htmlFor="roleid">Rol:</label>
             <select id="roleid" name="roleid" value={userData.roleid || ''} onChange={handleChange} required>
-              <option value={1}>Admin</option>
-              <option value={2}>Guardia</option>
-              <option value={3}>Recepción</option>
+              <option value={1}>Administrador</option>
+              <option value={2}>Recepcionista</option>
+              <option value={3}>Guarda</option>
             </select>
           </div>
           <button type="submit" className="btn btn-primary">Guardar Cambios</button>

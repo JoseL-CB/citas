@@ -1,25 +1,26 @@
+// Admin.jsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/admin.css';
 import { UserAddOutlined, DeleteOutlined, EditOutlined, SearchOutlined } from '@ant-design/icons';
-import { deleteUser, updateUser, getUsers, getUserById } from '../controladores/AgregarUsuarioController';
+import { deleteUser, getUsers, getUserById } from '../controladores/AgregarUsuarioController';
 
 function Admin() {
   const [usuarios, setUsuarios] = useState([]);
   const [filtroId, setFiltroId] = useState('');
   const [usuarioFiltrado, setUsuarioFiltrado] = useState(null);
 
-  useEffect(() => {
-    const obtenerUsuarios = async () => {
-      try {
-        const data = await getUsers();
-        setUsuarios(data);
-      } catch (error) {
-        console.error('Error al obtener usuarios:', error);
-      }
-    };
+  const obtenerDatos = async () => {
+    try {
+      const usuariosData = await getUsers();
+      setUsuarios(usuariosData);
+    } catch (error) {
+      console.error('Error al obtener datos de usuarios:', error);
+    }
+  };
 
-    obtenerUsuarios();
+  useEffect(() => {
+    obtenerDatos();
   }, []);
 
   const handleDelete = async (id) => {
@@ -28,22 +29,6 @@ function Admin() {
       setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
     } catch (error) {
       console.error('Error al eliminar usuario:', error);
-    }
-  };
-
-  const handleUpdate = async (id, userData) => {
-    try {
-      await updateUser(id, userData);
-      setUsuarios(
-        usuarios.map((usuario) => {
-          if (usuario.id === id) {
-            return { ...usuario, ...userData };
-          }
-          return usuario;
-        })
-      );
-    } catch (error) {
-      console.error('Error al actualizar usuario:', error);
     }
   };
 
@@ -80,10 +65,10 @@ function Admin() {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Nombre</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
                 <th>Fecha de Creación</th>
                 <th>Rol</th>
-                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
             </thead>
@@ -92,9 +77,9 @@ function Admin() {
                 <tr key={usuarioFiltrado.id}>
                   <td>{usuarioFiltrado.id}</td>
                   <td>{usuarioFiltrado.nombres}</td>
+                  <td>{usuarioFiltrado.apellidos}</td>
                   <td>{usuarioFiltrado.fecha_nacimiento}</td>
-                  <td>{usuarioFiltrado.roleid}</td>
-                  <td><span className={`status ${usuarioFiltrado.estado === 'activo' ? 'active' : 'inactive'}`}>&bull;</span> {usuarioFiltrado.estado}</td>
+                  <td>{usuarioFiltrado.rol}</td> {/* Usar 'rol' en lugar de 'namerol' */}
                   <td>
                     <Link to={`/modificar-usuario/${usuarioFiltrado.id}`} className="action-btn edit" title="Editar"><EditOutlined /></Link>
                     <button className="action-btn delete" title="Eliminar" onClick={() => handleDelete(usuarioFiltrado.id)}><DeleteOutlined /></button>
@@ -105,9 +90,9 @@ function Admin() {
                   <tr key={usuario.id}>
                     <td>{usuario.id}</td>
                     <td>{usuario.nombres}</td>
+                    <td>{usuario.apellidos}</td>
                     <td>{usuario.fecha_nacimiento}</td>
-                    <td>{usuario.roleid}</td>
-                    <td><span className={`status ${usuario.estado === 'activo' ? 'active' : 'inactive'}`}>&bull;</span> {usuario.estado}</td>
+                    <td>{usuario.rol}</td> {/* Usar 'rol' en lugar de 'namerol' */}
                     <td>
                       <Link to={`/modificar-usuario/${usuario.id}`} className="action-btn edit" title="Editar"><EditOutlined /></Link>
                       <button className="action-btn delete" title="Eliminar" onClick={() => handleDelete(usuario.id)}><DeleteOutlined /></button>

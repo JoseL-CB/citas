@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { UserOutlined, FileTextOutlined, CalendarOutlined, QuestionCircleOutlined, InfoCircleOutlined } from '@ant-design/icons'; // Importa iconos de Ant Design
-import '../assets/estilosLogin.css'; // Importa el archivo de estilos específico para Sidebar
+import '../assets/estilosAdmim.css'; // Importa el archivo de estilos específico para Sidebar
 
 const AdminSidebar = () => (
   <div className="admin-sidebar">

@@ -2,7 +2,7 @@
 import React from 'react';
 import HeaderR from '../componets/HeaderR';
 import SidebarR from '../componets/SidebarR';
-import '../assets/estilosLogin.css';
+import '../assets/estilosRecepcionista.css';
 
 const ReceptionistDashboard = () => (
   <div className="dashboard-container">

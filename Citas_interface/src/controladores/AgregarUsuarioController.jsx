@@ -36,11 +36,31 @@ const getUserById = async (id) => {
 
 const getUsers = async () => {
   try {
+    // Obtener los usuarios
     const response = await axios.get('http://localhost:8000/PerfilUsuario/listar');
-    return response.data;
+    const users = response.data;
+    console.log("Usuarios sin asignar roles:", users);
+
+    // Obtener los roles para cada usuario
+    const rolesResponse = await axios.get('http://localhost:8000/roles/listar');
+    const roles = rolesResponse.data;
+    console.log("Roles obtenidos:", roles);
+
+    // Asignar el nombre del rol a cada usuario
+    const usersWithRoleNames = users.map(user => {
+      const userRole = roles.find(role => role.id === user.roleid);
+      const roleName = userRole ? userRole.namerol : "Desconocido";
+      return {
+        ...user,
+        namerol: roleName
+      };
+    });
+  
+    return usersWithRoleNames;
   } catch (error) {
     throw new Error('Error al obtener la lista de usuarios');
   }
 };
+
 
 export { createUser, deleteUser, updateUser, getUserById, getUsers };

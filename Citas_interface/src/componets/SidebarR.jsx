@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { UserOutlined, FileTextOutlined, ScheduleOutlined, QuestionCircleOutlined, InfoCircleOutlined } from '@ant-design/icons'; // Importa todos los iconos necesarios
-import '../assets/estilosRecepcionista.css.css'; // Asegúrate de que el nombre del archivo CSS sea correcto
+import '../assets/estilosRecepcionista.css'; // Asegúrate de que el nombre del archivo CSS sea correcto
 
 const SidebarR = () => (
   <div className="admin-sidebar">
