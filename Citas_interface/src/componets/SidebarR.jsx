@@ -7,7 +7,7 @@ const SidebarR = () => (
   <div className="admin-sidebar">
     <ul>
       <li><Link to="/patients"><FileTextOutlined /> Pacientes</Link></li>
-      <li><Link to="/visitors"><UserOutlined /> Visitantes</Link></li>
+      <li><Link to="/visitante"><UserOutlined /> Visitantes</Link></li>
       <li><Link to="/visits"><ScheduleOutlined /> Registro de Visitas</Link></li>
     </ul>
     <div className="admin-menu-help">

@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/AgregarUsuario.css';
 import useUserData from '../modelos/AgregarUsuarioModel';
 import { createUser } from '../controladores/AgregarUsuarioController';
+import { useNavigate } from 'react-router-dom';
 
 function AgregarUsuario() {
   const { userData, handleChange } = useUserData();
+  const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await createUser(userData);
       console.log(response); // Manejar la respuesta de la API según necesites
+      setShowAlert(true);
+      setTimeout(() => {
+        navigate('/admin');
+        window.history.replaceState(null, '', '/');
+      }, 2000); // Redirige a /usuarios después de 2 segundos
     } catch (error) {
       console.error(error.message);
     }
@@ -67,6 +75,11 @@ function AgregarUsuario() {
           </form>
         </div>
       </div>
+      {showAlert && (
+        <div className="alert alert-success" role="alert">
+          Usuario agregado correctamente.
+        </div>
+      )}
     </div>
   );
 }

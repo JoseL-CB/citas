@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../assets/ModificarUsuario.css';
 import { updateUser, getUserById } from '../controladores/AgregarUsuarioController';
 
@@ -7,6 +7,7 @@ function ModificarUsuario() {
   const { id } = useParams();
   const [userData, setUserData] = useState({});
   const [showAlert, setShowAlert] = useState(false); // Estado para controlar la visibilidad de la alerta
+  const navigate = useNavigate(); // Hook para la navegación programática
 
   useEffect(() => {
     const obtenerUsuario = async () => {
@@ -35,6 +36,10 @@ function ModificarUsuario() {
       await updateUser(id, userData);
       setShowAlert(true); // Mostrar la alerta cuando se actualiza correctamente el usuario
       console.log('Usuario actualizado correctamente');
+      setTimeout(() => {
+        navigate('/admin');
+        window.history.replaceState(null, '', '/'); // Limpia el historial de navegación
+      }, 2000); // Redireccionar después de 2 segundos
     } catch (error) {
       console.error('Error al actualizar usuario:', error);
     }
