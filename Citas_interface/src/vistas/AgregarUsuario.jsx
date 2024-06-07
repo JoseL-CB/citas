@@ -16,7 +16,7 @@ function AgregarUsuario() {
       console.log(response); // Manejar la respuesta de la API según necesites
       setShowAlert(true);
       setTimeout(() => {
-        navigate('/admin');
+        navigate('/Admindash');
         window.history.replaceState(null, '', '/');
       }, 2000); // Redirige a /usuarios después de 2 segundos
     } catch (error) {

@@ -37,8 +37,8 @@ function ModificarVisitante() {
       setShowAlert(true);
       console.log('Visitante actualizado correctamente');
       setTimeout(() => {
-        navigate('/visitante');
-        window.history.replaceState(null, '', '/visitante');
+        navigate('/Recepcionista');
+        window.history.replaceState(null, '', '/');
       }, 2000); // Redirige a /visitante después de 2 segundos
     } catch (error) {
       console.error('Error al actualizar visitante:', error);

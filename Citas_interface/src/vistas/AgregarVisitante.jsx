@@ -16,8 +16,8 @@ function AgregarVisitante() {
       setShowAlert(true);
       console.log('Visitante registrado correctamente');
       setTimeout(() => {
-        navigate('/visitante');
-        window.history.replaceState(null, '', '/visitante');
+        navigate('/Recepcionista');
+        window.history.replaceState(null, '', '/');
       }, 2000); // Redirige a /visitante después de 2 segundos
     } catch (error) {
       console.error('Error al registrar visitante:', error);

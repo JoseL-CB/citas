@@ -20,6 +20,12 @@ function ModificarUsuario() {
     };
 
     obtenerUsuario();
+
+    // Función de limpieza
+    return () => {
+      setUserData({});
+      setShowAlert(false);
+    };
   }, [id]);
 
   const handleChange = (e) => {
@@ -37,7 +43,7 @@ function ModificarUsuario() {
       setShowAlert(true); // Mostrar la alerta cuando se actualiza correctamente el usuario
       console.log('Usuario actualizado correctamente');
       setTimeout(() => {
-        navigate('/admin');
+        navigate('/Admindash', { replace: true }); // Reemplaza la entrada actual en el historial
         window.history.replaceState(null, '', '/'); // Limpia el historial de navegación
       }, 2000); // Redireccionar después de 2 segundos
     } catch (error) {
