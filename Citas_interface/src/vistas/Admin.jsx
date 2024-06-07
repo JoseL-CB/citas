@@ -129,7 +129,7 @@ function Admin() {
             </tbody>
           </table>
         </div>
-        <button onClick={handleAddUser} className="btn btn-primary"><UserAddOutlined />Agregar Usuario</button>
+        <Link to="/agregar-usuario" className="btn btn-primary"><UserAddOutlined /> Agregar Usuario</Link>  
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import '../assets/estilosRecepcionista.css'; // Asegúrate de que el nombre del 
 const SidebarR = () => (
   <div className="admin-sidebar">
     <ul>
-      <li><Link to="/patients"><FileTextOutlined /> Pacientes</Link></li>
+      <li><Link to="/paciente"><FileTextOutlined /> Pacientes</Link></li>
       <li><Link to="/visitante"><UserOutlined /> Visitantes</Link></li>
       <li><Link to="/habitacion"><UserOutlined /> Habitaciones</Link></li>
       <li><Link to="/visits"><ScheduleOutlined /> Registro de Visitas</Link></li>

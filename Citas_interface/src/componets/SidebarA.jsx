@@ -8,7 +8,7 @@ const AdminSidebar = () => (
   <div className="admin-sidebar">
     <ul>
       <li><Link to="/admin"><UserOutlined /> Usuarios</Link></li>
-      <li><Link to="/patients"><FileTextOutlined /> Pacientes</Link></li>
+      <li><Link to="/listap"><FileTextOutlined /> Pacientes</Link></li>
       <li><Link to="/lista"><FileTextOutlined /> Habitaciones</Link></li>
       <li><Link to="/evento"><CalendarOutlined /> Eventos</Link></li>
       <li><Link to="/informes"><FileTextOutlined /> Informes</Link></li>
